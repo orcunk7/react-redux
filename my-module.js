@@ -1,6 +1,7 @@
 
 import fetch from 'node-fetch';
 import axios from 'axios';
+
 /*fetch("https://jsonplaceholder.typicode.com/users")
 .then((data) => data.json())
 .then((user) => {
@@ -34,6 +35,19 @@ async function getData()
   ).json();
   console.log(post2);
 
+}*/
+
+/**axios */
+async function getData()
+{
+  const {data : users} = await axios("https://jsonplaceholder.typicode.com/users");
+  console.log(users);
+
+  const {data :post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
+  console.log(post1);
+
+  const {data:post2} = await axios("https://jsonplaceholder.typicode.com/posts/2");
+  console.log(post2);
 }
 
 
